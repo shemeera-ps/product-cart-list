@@ -81,7 +81,7 @@ async function loadData() {
       quantity.textContent = cartProduct.quantity;
     }
 
-    document.querySelector(".products").addEventListener("click", function (e) {
+    productsContainer.addEventListener("click", function (e) {
       if (e.target.classList.contains("cart_add")) {
         const product = products[e.target.dataset.index];
         addToCart(e.target.dataset.index);
@@ -148,7 +148,29 @@ async function loadData() {
     //     checkButtonStatus(e.target);
     //   })
     // );
-
+    // productsContainer.addEventListener("click", function (e) {
+    //   e.preventDefault();
+    //   if (e.target.classList.contains("cart_btn_front")) {
+    //     let frontBtn = e.target.closest(".cart_btn_front");
+    //     console.log("Front Button", frontBtn);
+    //     let backBtn = frontBtn?.nextElementSibling;
+    //     console.log("Back Button", backBtn);
+    //     if (frontBtn) {
+    //       frontBtn.style.opacity = 0;
+    //       frontBtn.classList.add("hidden");
+    //       frontBtn.style.pointerEvents = "none";
+    //     }
+    //     if (backBtn) {
+    //       backBtn.style.opacity = 1;
+    //       backBtn.classList.remove("hidden");
+    //       backBtn.style.pointerEvents = "auto";
+    //     }
+    //     console.log(e.target.closest(".product__img"));
+    //     //e.target.closest(".product__img").classList.add("product__active");
+    //   } else {
+    //     return;
+    //   }
+    // });
     document.querySelectorAll(".cart_btn_front").forEach((btn) => {
       btn.addEventListener("click", function (e) {
         e.preventDefault();
@@ -165,6 +187,10 @@ async function loadData() {
           backBtn.classList.remove("hidden");
           backBtn.style.pointerEvents = "auto";
         }
+        let product = e.target.closest(".product");
+        let productImage = product
+          ?.querySelector(".product__img")
+          .classList.add("product__active");
       });
     });
 
@@ -339,6 +365,8 @@ async function loadData() {
         let backBtn = frontBtn?.nextElementSibling;
 
         if (!frontBtn || frontBtn.dataset.index === undefined) return;
+        let productDiv = button.closest(".product");
+        let productImage = productDiv?.querySelector(".product__img");
 
         let item = products[Number(frontBtn.dataset.index)];
         console.log(product);
@@ -354,6 +382,9 @@ async function loadData() {
             backBtn.classList.add("hidden");
             backBtn.style.pointerEvents = "none";
           }
+          if (productImage) {
+            productImage.classList.remove("product__active");
+          }
         }
       });
 
@@ -368,6 +399,11 @@ async function loadData() {
 
       let frontBtn = cartBtnContainer?.querySelector(".cart_btn_front");
       let backBtn = frontBtn?.nextElementSibling;
+      let product = cartBtnContainer?.closest(".product");
+
+      product
+        ?.querySelector(".product__img")
+        ?.classList.remove("product__active");
 
       if (frontBtn) {
         frontBtn.style.opacity = 1;
