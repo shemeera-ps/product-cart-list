@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Enjoy Delecious meals anytime anywhere</title>
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="product__list">
+        <h1 class="primary__heading">Desserts</h1>
+        <div class="products">
+          <!-- <div class="product">
+            <img
+              src="./assets/images/image-baklava-desktop.jpg"
+              alt=""
+              class="product__img"
+            />
+            <div class="product__details">
+              <span class="product__slug">Baklava</span>
+              <p class="product__name">Pistachio Baklava</p>
+              <span class="product__price">$4.00</span>
+            </div>
+            <div class="cart_btn cart_btn_container">
+              <button
+                class="add_to_cart cart_btn cart_btn_front"
+                data-index="4"
+              >
+                <img
+                  src="./assets/images/icon-add-to-cart.svg"
+                  alt=""
+                  class="cart__icon cart_btn"
+                  data-index="4"
+                />
+                <span class="cart__title cart_btn" data-index="4"
+                  >Add To Cart</span
+                >
+              </button>
+              <button class="cart_btn cart_btn_back" data-index="4">
+                <i class="ri-subtract-fill icon"></i>
+                <span class="item__quantity">1</span>
+                <i class="ri-add-line icon"></i>
+              </button>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <div class="cart">
+        <h1 class="cart__heading">
+          Your Cart<span class="cart__item_count">(0)</span>
+        </h1>
+        <div class="empty__cart__div">
+          <img
+            src="./assets/images/illustration-empty-cart.svg"
+            alt=""
+            class="empty__cart__img"
+          />
+          <span class="empty__cart__thumbnail"
+            >Your added items will appear here</span
+          >
+        </div>
+
+        <div class="cart__items__list hidden show__cart">
+          <!-- <div class="cart__item">
+            <span class="cart__item__name">Macaron Mix of Five</span>
+            <div class="cart__item__details">
+              <span class="cart__item__quantity">1x</span>
+              <span class="cart__item__price">$8.00</span>
+              <span class="cart__item__totalprice">$80.00</span>
+              <i class="ri-close-fill icon" data-item="2"></i>
+            </div>
+          </div> -->
+        </div>
+        <div class="orders hidden show__cart" style="display: none">
+          <span class="">Order Total</span>
+          <span class="order__amount">$456.00</span>
+        </div>
+        <div class="disclaimer hidden show__cart" style="display: none">
+          <img src="./assets/images/icon-carbon-neutral.svg" alt="" class="" />
+          <span class=""
+            >This is a
+            <span class="highlight">carbon neutral</span> delivery</span
+          >
+        </div>
+        <button
+          class="confirm__order hidden show__cart"
+          id="showOrder"
+          style="display: none"
+        >
+          Confirm Order
+        </button>
+      </div>
+    </div>
+
+    <div class="confirm__order__container">
+      <img
+        src="./assets/images/icon-order-confirmed.svg"
+        alt=""
+        class="confirm__img"
+      />
+      <h1 class="heading">Order Confirmed</h1>
+      <p class="description">We hope u enjoy your food</p>
+      <div class="order__list">
+        <!-- <div class="order__item">
+          <img
+            src="./assets/images/image-macaron-mobile.jpg"
+            alt=""
+            class="order__item__img"
+          />
+          <div class="order__item__details">
+            <span class="order__item__name">Macaron Mix of Five</span>
+
+            <span class="order__item__quantity">1x</span>
+            <span class="order__item__price">$8.00</span>
+          </div>
+          <span class="order__item__totalprice">$80.00</span>
+        </div> -->
+
+        <!-- <div class="order__total hidden">
+          <span>Order Total</span>
+          <span class="order__grand__total">$800.0</span>
+        </div> -->
+      </div>
+      <a href="index.html" class="start_new_order hidden">Start New Order</a>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
